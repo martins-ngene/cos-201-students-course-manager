@@ -1,0 +1,18 @@
+# Submission documents and helpers
+*.pdf
+screenshots/
+tools/
+
+# Compiled Java classes (rebuilt by compile_and_run.sh)
+bin/
+*.class
+
+# Runtime data written by the app (Save to File)
+data/
+
+# OS / editor files
+.DS_Store
+.idea/
+.vscode/
+*.iml
+__pycache__/
