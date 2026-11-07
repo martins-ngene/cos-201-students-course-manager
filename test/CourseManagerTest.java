@@ -39,25 +39,25 @@ public class CourseManagerTest {
     // Tests
 
     static void testCourseValidation() {
-        expectThrows("empty code rejected", () -> new Course("  ", "Programming I", 3));
-        expectThrows("badly formed code rejected", () -> new Course("201COS", "Programming I", 3));
+        expectThrows("empty code rejected", () -> new Course("  ", "Computer Programming I", 3));
+        expectThrows("badly formed code rejected", () -> new Course("201COS", "Computer Programming I", 3));
         expectThrows("empty title rejected", () -> new Course("COS201", "   ", 3));
-        expectThrows("zero units rejected", () -> new Course("COS201", "Programming I", 0));
-        expectThrows("7 units rejected", () -> new Course("COS201", "Programming I", 7));
+        expectThrows("zero units rejected", () -> new Course("COS201", "Computer Programming I", 0));
+        expectThrows("7 units rejected", () -> new Course("COS201", "Computer Programming I", 7));
         expectThrows("text units rejected", () -> Course.parseUnits("three"));
         expectThrows("decimal units rejected", () -> Course.parseUnits("2.5"));
     }
 
     static void testStringProcessing() {
-        Course c = new Course("  cos 201 ", "  Programming    I  ", 3);
+        Course c = new Course("  cos 201 ", "  Computer   Programming    I  ", 3);
         check("code trimmed, spaces removed, upper-cased", c.getCourseCode().equals("COS201"));
-        check("title trimmed and spaces collapsed", c.getCourseTitle().equals("Programming I"));
+        check("title trimmed and spaces collapsed", c.getCourseTitle().equals("Computer Programming I"));
         check("units parsed with spaces", Course.parseUnits(" 4 ") == 4);
     }
 
     static void testAddAndDuplicates() {
         CourseManager m = new CourseManager();
-        m.addCourse(new Course("COS201", "Programming I", 3));
+        m.addCourse(new Course("COS201", "Computer Programming I", 3));
         check("course added", m.getCourseCount() == 1);
         expectThrows("duplicate code rejected (case-insensitive)",
             () -> m.addCourse(new Course("cos201", "Another", 2)));
@@ -110,12 +110,12 @@ public class CourseManagerTest {
         File file = File.createTempFile("bad", ".txt");
         file.deleteOnExit();
         try (FileWriter w = new FileWriter(file)) {
-            w.write("COS201,Programming I,3\n");
+            w.write("COS201,Computer Programming I,3\n");
             w.write("\n");
             w.write("# a comment line\n");
             w.write("COS203,Discrete Mathematics,three\n");   // bad units
             w.write("just some text\n");                       // missing fields
-            w.write("COS201,Programming I,3\n");               // duplicate
+            w.write("COS201,Computer Programming I,3\n");               // duplicate
             w.write("MTH201,Mathematical Methods I,3\n");
         }
         CourseManager m = new CourseManager();
@@ -142,7 +142,7 @@ public class CourseManagerTest {
 
     static CourseManager sample() {
         CourseManager m = new CourseManager();
-        m.addCourse(new Course("COS201", "Programming I", 3));
+        m.addCourse(new Course("COS201", "Computer Programming I", 3));
         m.addCourse(new Course("COS203", "Discrete Mathematics", 3));
         m.addCourse(new Course("MTH201", "Mathematical Methods I", 3));
         m.addCourse(new Course("GST201", "Nigerian Peoples and Culture", 2));

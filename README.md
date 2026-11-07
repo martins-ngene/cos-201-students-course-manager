@@ -1,6 +1,6 @@
 # Student Course Management System
 
-**COS 201 — Programming I | Mid-Semester Lab Assessment | MIVA Open University**
+**COS 201 - Computer Programming I | Mid-Semester Lab Assessment | MIVA Open University**
 Author: Martins Ngene
 
 A Java application that lets a student record their semester courses, view them, search by

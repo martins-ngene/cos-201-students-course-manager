@@ -41,7 +41,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * CourseManagementGUI.java
@@ -149,7 +148,7 @@ public class CourseManagementGUI extends JFrame {
 
         JMenu help = new JMenu("Help");
         help.add(menuItem("About", 0, 0, e -> JOptionPane.showMessageDialog(this,
-            "Student Course Management System\nCOS 201 - Programming I, MIVA Open University\n"
+            "Student Course Management System\nCOS 201 - Computer Programming I, MIVA Open University\n"
                 + "Author: Martins Ngene\n\nCourses are saved to " + CourseManager.DEFAULT_FILE_PATH,
             "About", JOptionPane.INFORMATION_MESSAGE)));
         bar.add(help);
@@ -177,7 +176,7 @@ public class CourseManagementGUI extends JFrame {
         title.setFont(FONT_TITLE);
         title.setForeground(Color.WHITE);
 
-        JLabel subtitle = new JLabel("COS 201 - Programming I  |  Record, search and total your semester courses");
+        JLabel subtitle = new JLabel("COS 201 - Computer Programming I  |  Record, search and total your semester courses");
         subtitle.setFont(FONT_SUB);
         subtitle.setForeground(new Color(191, 219, 254));
 
@@ -209,7 +208,7 @@ public class CourseManagementGUI extends JFrame {
     /** Card with the "Add New Course" form (operation 1). */
     private JPanel createAddCard() {
         codeField = new HintTextField("e.g. COS201");
-        titleField = new HintTextField("e.g. Programming I");
+        titleField = new HintTextField("e.g. Computer Programming I");
         unitsField = new HintTextField(Course.MIN_UNITS + " to " + Course.MAX_UNITS);
         unitsField.addActionListener(e -> addCourse());   // Enter key adds the course
 

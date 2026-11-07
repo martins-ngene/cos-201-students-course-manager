@@ -31,7 +31,7 @@ public final class Course {
 
     // Fields
     private String courseCode;   // e.g. "COS201"
-    private String courseTitle;  // e.g. "Programming I"
+    private String courseTitle;  // e.g. "Computer Programming I"
     private int creditUnits;     // e.g. 3
 
     // Constructor
