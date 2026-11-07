@@ -37,9 +37,7 @@ public class CourseManagementConsole {
         this.out = output;
     }
 
-    // ═════════════════════════════════════════════════════════════════════════
-    //  RECURSIVE MENU
-    // ═════════════════════════════════════════════════════════════════════════
+    // RECURSIVE MENU
 
     /**
      * Displays the menu, runs the chosen operation, then calls itself again.
@@ -86,7 +84,7 @@ public class CourseManagementConsole {
         showMenu();                           // recursive case: show the menu again
     }
 
-    // ─── Operations ──────────────────────────────────────────────────────────
+    // Operations
 
     private void addCourse() {
         out.println("\n-- Add Course --");
@@ -196,7 +194,7 @@ public class CourseManagementConsole {
         return answer == null || answer.equalsIgnoreCase("y");
     }
 
-    // ─── Input helpers ───────────────────────────────────────────────────────
+    // Input helpers
 
     /** Thrown when the input stream ends while we are waiting for an answer. */
     private static final class InputEndedException extends Exception {
@@ -234,7 +232,7 @@ public class CourseManagementConsole {
         }
     }
 
-    // ─── Entry point ─────────────────────────────────────────────────────────
+    // Entry point
 
     public static void main(String[] args) {
         new CourseManagementConsole(System.in, System.out).showMenu();

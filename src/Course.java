@@ -15,7 +15,7 @@
  */
 public final class Course {
 
-    // ─── Validation rules ────────────────────────────────────────────────────
+    // Validation rules
     /** Smallest number of credit units a course may carry. */
     public static final int MIN_UNITS = 1;
     /** Largest number of credit units a course may carry. */
@@ -29,12 +29,12 @@ public final class Course {
     /** Delimiter used when saving/loading courses to/from a file. */
     private static final String FILE_DELIMITER = ",";
 
-    // ─── Fields ──────────────────────────────────────────────────────────────
+    // Fields
     private String courseCode;   // e.g. "COS201"
     private String courseTitle;  // e.g. "Programming I"
     private int creditUnits;     // e.g. 3
 
-    // ─── Constructor ─────────────────────────────────────────────────────────
+    // Constructor
 
     /**
      * Creates a new Course. Every value is checked by the matching setter.
@@ -47,13 +47,13 @@ public final class Course {
         setCreditUnits(creditUnits);
     }
 
-    // ─── Getters ─────────────────────────────────────────────────────────────
+    // Getters
 
     public String getCourseCode()  { return courseCode; }
     public String getCourseTitle() { return courseTitle; }
     public int getCreditUnits()    { return creditUnits; }
 
-    // ─── Static helpers ──────────────────────────────────────────────────────
+    // Static helpers
 
     /**
      * Normalises a course code typed by the user: trims it, removes inner
@@ -94,7 +94,7 @@ public final class Course {
         }
     }
 
-    // ─── Setters with validation ─────────────────────────────────────────────
+    // Setters with validation
 
     /**
      * Sets the course code after normalising and validating it.
@@ -143,7 +143,7 @@ public final class Course {
         this.creditUnits = creditUnits;
     }
 
-    // ─── File I/O helpers ────────────────────────────────────────────────────
+    // File I/O helpers
 
     /**
      * Converts this course to one line of text: code,title,units
@@ -177,7 +177,7 @@ public final class Course {
         return new Course(code, title, units);
     }
 
-    // ─── toString ────────────────────────────────────────────────────────────
+    // toString
 
     @Override
     public String toString() {

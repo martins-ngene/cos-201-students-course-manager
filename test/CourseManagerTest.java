@@ -36,7 +36,7 @@ public class CourseManagerTest {
         }
     }
 
-    // ─── Tests ───────────────────────────────────────────────────────────────
+    // Tests
 
     static void testCourseValidation() {
         expectThrows("empty code rejected", () -> new Course("  ", "Programming I", 3));
@@ -138,7 +138,7 @@ public class CourseManagerTest {
         check("courses in memory kept after failed load", m.getCourseCount() == 5);
     }
 
-    // ─── Helpers ─────────────────────────────────────────────────────────────
+    // Helpers
 
     static CourseManager sample() {
         CourseManager m = new CourseManager();

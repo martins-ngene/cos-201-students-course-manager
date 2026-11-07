@@ -52,7 +52,7 @@ public class CourseManager {
         }
     }
 
-    // ─── Add ─────────────────────────────────────────────────────────────────
+    // Add
 
     /**
      * Adds a course, refusing duplicates.
@@ -70,7 +70,7 @@ public class CourseManager {
         courses.add(course);
     }
 
-    // ─── View ────────────────────────────────────────────────────────────────
+    // View
 
     /** Returns a copy of all courses so callers cannot change the internal list. */
     public List<Course> getAllCourses() {
@@ -85,9 +85,7 @@ public class CourseManager {
         return courses.isEmpty();
     }
 
-    // ═════════════════════════════════════════════════════════════════════════
-    //  RECURSION 1 — SEARCH BY COURSE CODE
-    // ═════════════════════════════════════════════════════════════════════════
+    // RECURSION 1 - SEARCH BY COURSE CODE
 
     /**
      * Finds a course by its code. The search term is normalised first
@@ -120,9 +118,7 @@ public class CourseManager {
         return searchCourseByCode(target, index + 1);
     }
 
-    // ═════════════════════════════════════════════════════════════════════════
-    //  RECURSION 2 — TOTAL CREDIT UNITS
-    // ═════════════════════════════════════════════════════════════════════════
+    // RECURSION 2 - TOTAL CREDIT UNITS
 
     /** Returns the sum of credit units of all courses. */
     public int computeTotalUnits() {
@@ -145,7 +141,7 @@ public class CourseManager {
         return courses.get(index).getCreditUnits() + computeTotalUnits(index + 1);
     }
 
-    // ─── Delete ──────────────────────────────────────────────────────────────
+    // Delete
 
     /** Removes the course with the given code. Returns true if one was removed. */
     public boolean removeCourse(String code) {
@@ -153,7 +149,7 @@ public class CourseManager {
         return found != null && courses.remove(found);
     }
 
-    // ─── Save ────────────────────────────────────────────────────────────────
+    // Save
 
     public void saveCourses() throws IOException {
         saveCourses(DEFAULT_FILE_PATH);
@@ -179,7 +175,7 @@ public class CourseManager {
         }
     }
 
-    // ─── Load ────────────────────────────────────────────────────────────────
+    // Load
 
     public LoadResult loadCourses() throws IOException {
         return loadCourses(DEFAULT_FILE_PATH);

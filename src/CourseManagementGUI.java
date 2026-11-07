@@ -66,7 +66,7 @@ public class CourseManagementGUI extends JFrame {
 
     private static final long serialVersionUID = 1L;
 
-    // ─── Colours ─────────────────────────────────────────────────────────────
+    // Colours
     private static final Color PRIMARY    = new Color(30, 64, 175);
     private static final Color SECONDARY  = new Color(2, 132, 199);
     private static final Color SUCCESS    = new Color(5, 150, 105);
@@ -80,7 +80,7 @@ public class CourseManagementGUI extends JFrame {
     private static final Color ROW_ALT    = new Color(248, 250, 252);
     private static final Color SELECTED   = new Color(219, 234, 254);
 
-    // ─── Fonts ───────────────────────────────────────────────────────────────
+    // Fonts
     private static final Font FONT_TITLE  = new Font(Font.SANS_SERIF, Font.BOLD, 21);
     private static final Font FONT_SUB    = new Font(Font.SANS_SERIF, Font.PLAIN, 13);
     private static final Font FONT_HEAD   = new Font(Font.SANS_SERIF, Font.BOLD, 14);
@@ -88,7 +88,7 @@ public class CourseManagementGUI extends JFrame {
     private static final Font FONT_BODY   = new Font(Font.SANS_SERIF, Font.PLAIN, 13);
     private static final Font FONT_BUTTON = new Font(Font.SANS_SERIF, Font.BOLD, 12);
 
-    // ─── State and components ────────────────────────────────────────────────
+    // State and components
     private final transient CourseManager manager = new CourseManager();
     private boolean unsavedChanges = false;
 
@@ -102,7 +102,7 @@ public class CourseManagementGUI extends JFrame {
     private JLabel unitsLabel;
     private JLabel statusLabel;
 
-    // ─── Constructor ─────────────────────────────────────────────────────────
+    // Constructor
 
     public CourseManagementGUI() {
         super("Student Course Management System - COS 201");
@@ -129,9 +129,7 @@ public class CourseManagementGUI extends JFrame {
         setStatus("Ready. Add a course or load your saved list (Operations > 6).");
     }
 
-    // ═════════════════════════════════════════════════════════════════════════
-    //  MENU BAR — numbered operations 1-7
-    // ═════════════════════════════════════════════════════════════════════════
+    // MENU BAR - numbered operations 1-7
 
     private JMenuBar createMenuBar() {
         int shortcut = Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx();
@@ -167,9 +165,7 @@ public class CourseManagementGUI extends JFrame {
         return item;
     }
 
-    // ═════════════════════════════════════════════════════════════════════════
-    //  LAYOUT
-    // ═════════════════════════════════════════════════════════════════════════
+    // LAYOUT
 
     private JPanel createHeader() {
         JPanel header = new JPanel();
@@ -332,9 +328,7 @@ public class CourseManagementGUI extends JFrame {
         return bar;
     }
 
-    // ═════════════════════════════════════════════════════════════════════════
-    //  OPERATIONS (event handlers)
-    // ═════════════════════════════════════════════════════════════════════════
+    // OPERATIONS (event handlers)
 
     /** Operation 1: validate the form and add a course. */
     private void addCourse() {
@@ -488,9 +482,7 @@ public class CourseManagementGUI extends JFrame {
         }
     }
 
-    // ═════════════════════════════════════════════════════════════════════════
-    //  HELPERS
-    // ═════════════════════════════════════════════════════════════════════════
+    // HELPERS
 
     /** Rebuilds the table rows from the manager (iteration) and updates totals. */
     private void refreshTable() {
@@ -624,7 +616,7 @@ public class CourseManagementGUI extends JFrame {
         }
     }
 
-    // ─── Entry point ─────────────────────────────────────────────────────────
+    // Entry point
 
     public static void main(String[] args) {
         boolean consoleRequested = args.length > 0 && args[0].trim().equalsIgnoreCase("--console");
